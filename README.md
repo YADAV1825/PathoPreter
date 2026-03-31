@@ -176,6 +176,7 @@ PathoPreter achieves its elite performance without leaning entirely on pre-calcu
 ---
 
 ## ♻️ Open Science & 100% Reproducibility (Please give it a star if it helps!)
+# TRAIN FOR FREE ON LIGHTNING.AI ON A100 IN 6 HOURS UNDER THE FREE CREDITS!!
 
 In clinical genomics, transparency is just as critical as performance. We do not believe in "black box" medicine or hidden methodologies. To ensure total trust and allow the community to verify our benchmarks, the entire PathoPreter ecosystem is fully open-sourced.
 
