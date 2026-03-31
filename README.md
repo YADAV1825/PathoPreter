@@ -182,3 +182,24 @@ In clinical genomics, transparency is just as critical as performance. We do not
 * **Dataset Generation Pipeline:** The complete end-to-end data processing, k-mer tokenization, and feature engineering pipeline is publicly available at **[YADAV1825/PathoPreter](https://github.com/YADAV1825/PathoPreter)**.
 * **From-Scratch Training Scripts:** We provide the exact, fully reproducible biological fine-tuning scripts used to create the model. Anyone can train PathoPreter from scratch, verify our claims, or adapt the architecture to build specialized models for their own private genetic cohorts. **[YADAV1825/PathoPreter](https://github.com/YADAV1825/PathoPreter)**.
 
+```
+├── data_preprocessing/
+│   ├── atgc_sequence_add.py
+│   ├── clinvar_clean.py
+│   ├── clinvar_download.py
+│   ├── dbnsfp_download.py
+│   ├── dbnsfp_merge.py
+│   ├── gnomAD_download.py
+│   ├── gnomAD_merge.py
+│   ├── grch38_download.py
+│   ├── grch38_merge.py
+│   └── human_genome_builder.py
+├── Instadeep_NT_500M_CPT/
+│   ├── 100k_testing_AUC.ipynb
+│   ├── 100k_testing_recall.ipynb
+│   ├── ablation_study_10_tests.png
+│   ├── Neucletide_transformer.ipynb
+│   ├── shap_modality_comparison.png
+│   └── shap_tabular_beeswarm.png
+└── README.md
+```
