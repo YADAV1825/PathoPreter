@@ -3,8 +3,10 @@ license: cc-by-nc-nd-3.0
 ---
 
 # 🧬 PathoPreter
+## TRAIN YOURSELF FOR FREE ON LIGHTNING.AI ON A100 40GB IN 6 HOURS UNDER THE FREE CREDITS!! (use Lambda labs!😉) See reproducible script section at end of readme!! 
 
 ---
+
 # Author
 
 ## Rohit Yadav
@@ -20,7 +22,7 @@ Github:  https://github.com/YADAV1825
 
 ---
 
-**Clinical-Grade Genomic Variant Triage & Pathogenicity Predictor by AutonomousX**
+# **Clinical-Grade Genomic Variant Triage & Pathogenicity Predictor by AutonomousX**
 
 PathoPreter is a highly efficient, hybrid foundation model engineered to predict the pathogenicity of genetic variants. Built on a 500M parameter Nucleotide Transformer backbone with a custom hybrid classification head, it natively processes both raw DNA sequences and clinical tabular features (conservation scores, gnomAD AF).
 
