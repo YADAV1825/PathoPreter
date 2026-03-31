@@ -173,6 +173,8 @@ PathoPreter achieves its elite performance without leaning entirely on pre-calcu
 * **Backbone:** `InstaDeepAI/nucleotide-transformer-500m-human-ref`
 * **Custom Head:** Concatenates transformer pooled DNA embeddings with normalized tabular features.
 
+---
+
 ## ♻️ Open Science & 100% Reproducibility (Please give it a star if it helps!)
 
 In clinical genomics, transparency is just as critical as performance. We do not believe in "black box" medicine or hidden methodologies. To ensure total trust and allow the community to verify our benchmarks, the entire PathoPreter ecosystem is fully open-sourced.
