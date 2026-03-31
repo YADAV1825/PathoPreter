@@ -180,5 +180,5 @@ PathoPreter achieves its elite performance without leaning entirely on pre-calcu
 In clinical genomics, transparency is just as critical as performance. We do not believe in "black box" medicine or hidden methodologies. To ensure total trust and allow the community to verify our benchmarks, the entire PathoPreter ecosystem is fully open-sourced.
 
 * **Dataset Generation Pipeline:** The complete end-to-end data processing, k-mer tokenization, and feature engineering pipeline is publicly available at **[YADAV1825/PathoPreter](https://github.com/YADAV1825/PathoPreter)**.
-* **From-Scratch Training Scripts:** We provide the exact, fully reproducible biological fine-tuning scripts used to create the model. Anyone can train PathoPreter from scratch, verify our claims, or adapt the architecture to build specialized models for their own private genetic cohorts.
+* **From-Scratch Training Scripts:** We provide the exact, fully reproducible biological fine-tuning scripts used to create the model. Anyone can train PathoPreter from scratch, verify our claims, or adapt the architecture to build specialized models for their own private genetic cohorts. **[YADAV1825/PathoPreter](https://github.com/YADAV1825/PathoPreter)**.
 
