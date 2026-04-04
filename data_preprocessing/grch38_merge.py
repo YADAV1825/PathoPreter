@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import pandas as pd
 from pyfaidx import Fasta
 from joblib import Parallel, delayed
@@ -7,8 +6,8 @@ import os
 
 # --- CONFIGURATION ---
 PARQUET_FILE = "train_enriched.parquet"
-FASTA_FILE = "GCA_000001405.29_GRCh38.p14_genomic.fna"
-REPORT_FILE = "GCA_000001405.29_GRCh38.p14_assembly_report.txt"
+FASTA_FILE = os.path.join("grch38", "GCA_000001405.29_GRCh38.p14_genomic.fna") 
+REPORT_FILE = os.path.join("grch38", "GCA_000001405.29_GRCh38.p14_assembly_report.txt")
 OUTPUT_FILE = "train_enriched_SEQUENCE.parquet"
 
 # Context: How many bases before/after?
@@ -133,61 +132,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
-import gzip
-import os
-import polars as pl
-
-input_path = os.path.join("grch38", "GRCh38_genomic.fna.gz")
-output_path = os.path.join("grch38", "grch38_cleaned.parquet")
-
-print("Parsing GRCh38 FASTA file and extracting main chromosomes...")
-records = []
-current_chrom = None
-current_seq = []
-
-# Open the compressed FASTA file directly
-with gzip.open(input_path, 'rt') as f:
-    for line in f:
-        line = line.strip()
-        
-        if line.startswith(">"):
-            # If we were tracking a main chromosome, save it before moving to the next
-            if current_chrom and current_seq:
-                records.append({
-                    "chrom": current_chrom, 
-                    "sequence": "".join(current_seq)
-                })
-                print(f"Merged and processed {current_chrom}")
-            
-            # Reset for the new sequence block
-            current_seq = []
-            current_chrom = None
-            
-            # Identify standard chromosomes (1-22, X, Y) or the Mitochondrion
-            if "Homo sapiens chromosome " in line and "Primary Assembly" in line:
-                part = line.split("Homo sapiens chromosome ")[1]
-                chrom_num = part.split(",")[0]
-                current_chrom = f"chr{chrom_num}"
-            elif "mitochondrion" in line.lower() and "complete genome" in line.lower():
-                current_chrom = "chrM"
-        else:
-            # If we are currently tracking a main chromosome, append the DNA string
-            if current_chrom:
-                current_seq.append(line)
-    
-    # Catch the very last sequence block when the file ends
-    if current_chrom and current_seq:
-        records.append({
-            "chrom": current_chrom, 
-            "sequence": "".join(current_seq)
-        })
-        print(f"Merged and processed {current_chrom}")
-
-print("\nSaving sequences to Parquet format...")
-df = pl.DataFrame(records)
-df.write_parquet(output_path)
-
-print(f"Done! Saved to {output_path}")
-print(f"Total chromosomes saved: {df.height}")
->>>>>>> 871859b092f2a08a39212afc4f30f3e718defcd6
