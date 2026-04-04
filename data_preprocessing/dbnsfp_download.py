@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import requests
 import os
 
@@ -60,5 +59,4 @@ except Exception as e:
 
 print("Extracting files...")
 os.system("unzip dbNSFP4.9a.zip -d dbnsfp_data")
->>>>>>> 871859b092f2a08a39212afc4f30f3e718defcd6
 print("Extraction finished.")
